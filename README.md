@@ -234,3 +234,6 @@ npm run dev
 - Implement template sanitization
 - Add audit logs for template changes
 - Enhance API key rotation mechanism
+
+#### Quick Video Demo
+- https://www.loom.com/share/35c5b0797509482b9c4f779f8869c50a?sid=a086106e-1600-4fb0-acd1-e310d755e769
