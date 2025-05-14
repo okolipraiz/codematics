@@ -1,4 +1,4 @@
-# Email Template Builder
+# Codematics - Email Template Builder
 
 A modern email template builder with drag-and-drop functionality, live preview, and integration with popular email service providers.
 
@@ -64,9 +64,6 @@ EmailProviderFactory.initialize({
     apiKey: process.env.MAILGUN_PRIVATE_API_KEY,
     domain: "your-domain.com"
   },
-  sendgrid: {
-    apiKey: process.env.SENDGRID_API_KEY
-  }
 });
 ```
 
@@ -78,7 +75,6 @@ Create a `.env.local` file:
 ```plaintext
 MAILGUN_PRIVATE_API_KEY=your-mailgun-key
 MAILGUN_DOMAIN=your-domain.com
-SENDGRID_API_KEY=your-sendgrid-key
 ```
 
 ## 📦 API Endpoints/Custom Server
@@ -238,7 +234,3 @@ npm run dev
 - Implement template sanitization
 - Add audit logs for template changes
 - Enhance API key rotation mechanism
-
-
-
-# codematics

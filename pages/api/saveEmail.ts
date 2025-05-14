@@ -56,11 +56,14 @@ export default async function handler(
     console.error("Mailgun error details:", {
       message: error.message,
       stack: error.stack,
+      response: error.response?.body || error.response,
+      status: error.status
     });
 
     return res.status(500).json({
       message: "Failed to save template",
       details: error.message,
+      error: error.response?.body || error.response || error
     });
   }
 }

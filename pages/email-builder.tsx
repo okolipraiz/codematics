@@ -3,6 +3,7 @@ import { EmailProviderFactory } from '@/features/email-builder/providers/EmailPr
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { toast } from 'sonner';
 
 export default function EmailBuilderPage() {
   const [html, setHtml] = useState<string>('');
@@ -44,12 +45,18 @@ export default function EmailBuilderPage() {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to save template");
-      }
+     const data = await response.json();
+
+     if (!response.ok) {
+       toast.error(data.details || data.message || "Failed to save template");
+       console.error("Template save error:", data);
+       return;
+     }
 
       console.log("Template saved successfully to Mailgun");
-    } catch (error) {
+      toast.success("Template saved successfully to Mailgun");
+    } catch (error: any) {
+      toast.error(`${ error?.details}`);
       console.error("Failed to save template:", error);
     }
   };
