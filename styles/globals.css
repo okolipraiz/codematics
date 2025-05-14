@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colors */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0, 0%, 0%;
+
+    --primary: 208 100% 36%;
+    --secondary: 36 100% 53%;
+
+    --primary-foreground: 0 0% 98%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --auth-background: 205 100% 98%;
+    --auth-foreground: 0 0% 100%;
+
+    --warning: 36 100% 53%;
+    --error: 0 82% 44%;
+
+    --active-hover: 201 100% 59%;
+    --active: 208 100% 36%;
+    --active-foreground: 0 0% 100%;
+
+    --success: 145 63% 42%;
+
+    --gray-100: 0 0% 88%;
+    --gray-300: 0 0% 74%;
+    --gray: 0 0% 51%;
+    --gray-700: 0 0% 31%;
+    --gray-900: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 208 88% 3%;
+    --foreground: 0 0% 100%;
+
+    --primary-foreground: 0 0% 100%;
+    --primary: 208 100% 7%;
+
+    --secondary-foreground: 0 0% 98%;
+    --secondary: 208 100% 50%;
+
+    --auth-background: 205 100% 98% 1;
+    --auth-foreground: 0 0% 100%;
+
+    --active-hover: 208 100% 40%;
+    --active: 208 100% 50%;
+    --active-foreground: 0 0% 100%;
+
+    --success: 145 63% 42%;
+    --warning: 36 100% 53%;
+    --error: 349 100% 50%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --muted-light: 0 0% 59%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  img {
+    @apply object-cover inline-block;
+  }
+
+  .container {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+}
+
+
+* {
+  font-family:  Open-sans, "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+}
+
+
