@@ -1,5 +1,20 @@
-import { memo } from 'react';
+import { memo, CSSProperties } from 'react';
 import { EmailElement } from '@/types/emailBuilder';
+
+/**
+ * Element styles are stored kebab-cased because that is what the HTML
+ * exporter and the properties panel work with. React's style prop needs
+ * camelCase, so convert on the way into the preview only.
+ * CSS custom properties are passed through untouched.
+ */
+const toReactStyles = (styles: Record<string, string>): CSSProperties =>
+  Object.entries(styles).reduce((acc, [key, value]) => {
+    const reactKey = key.startsWith('--')
+      ? key
+      : key.replace(/-([a-z])/g, (_, char) => char.toUpperCase());
+    acc[reactKey] = value;
+    return acc;
+  }, {} as Record<string, string>) as CSSProperties;
 
 interface RenderElementProps {
   element: EmailElement;
@@ -14,11 +29,11 @@ export const RenderElement = memo(({
   onClick, 
   readOnly = false 
 }: RenderElementProps) => {
-  const elementStyles = { 
-    ...element.styles,
-    ...(isSelected && !readOnly ? { 
-      outline: '2px solid #3b82f6', 
-      outlineOffset: '2px' 
+  const elementStyles: CSSProperties = {
+    ...toReactStyles(element.styles),
+    ...(isSelected && !readOnly ? {
+      outline: '2px solid #3b82f6',
+      outlineOffset: '2px'
     } : {})
   };
 
