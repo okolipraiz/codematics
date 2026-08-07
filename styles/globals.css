@@ -103,7 +103,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 
   img {
@@ -113,12 +113,6 @@
   .container {
     @apply px-4 md:px-6 lg:px-8;
   }
-}
-
-
-* {
-  font-family:  Open-sans, "Segoe UI", Tahoma, Geneva, Verdana,
-    sans-serif;
 }
 
 

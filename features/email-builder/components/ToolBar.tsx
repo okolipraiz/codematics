@@ -9,6 +9,7 @@ import {
   FileCode
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/ModeToggle';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
@@ -225,6 +226,9 @@ export const ToolBar = ({ readOnly = false, onSave }: ToolBarProps) => {
             </div>
           </>
         )}
+
+        {/* Outside the readOnly guard: switching theme is always available */}
+        <ModeToggle />
       </div>
     </div>
   );
