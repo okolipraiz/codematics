@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Codematics Tools</h1>
+        <h1 className="text-3xl font-bold">Codematics Assignment Tools</h1>
         <ModeToggle />
       </div>
       
